@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/chenchaoleicn/spring-cloud-config-reps.git
+#          username: chenchaoleicn@gmail.com
+#          password: <password>
+          search-paths: '{application}'
+          #配置仓库在本地文件系统中的缓存目录
+          basedir: /Users/chenchaolei/vcs-local-repo/git/gitlab-docker-repo/chenchaoleicn/spring-cloud-config-reps-cache

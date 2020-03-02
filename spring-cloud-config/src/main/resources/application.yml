@@ -1,0 +1,37 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: spring-cloud-config
+  profiles:
+    active: dev
+  cloud:
+    #开启消息跟踪
+    bus:
+      trace:
+        enabled: true
+
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://eureka-peer1:8761/eureka/,http://eureka-peer2:8762/eureka/,http://eureka-peer3:8763/eureka/
+      defaultZone: http://eureka-single:8761/eureka/
+
+management:
+  security:
+    #关闭安全验证
+    enabled: false
+  #加载所有的端点(默认只加载了info、health)
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    info:
+      show-details: always
+    health:
+      show-details: always
+    refresh:
+      show-details: always
+    trace:
+      show-details: always
