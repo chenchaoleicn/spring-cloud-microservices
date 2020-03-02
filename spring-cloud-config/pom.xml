@@ -25,10 +25,17 @@
 <!--			<groupId>org.tmatesoft.svnkit</groupId>-->
 <!--			<artifactId>svnkit</artifactId>-->
 <!--		</dependency>-->
+
 		<!-- eureka客户端 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<!-- 支持消息总线, 其支持即时刷新位于vcs中的配置信息 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
 
 		<dependency>

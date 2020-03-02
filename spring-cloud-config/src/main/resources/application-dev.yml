@@ -9,3 +9,8 @@ spring:
           search-paths: '{application}'
           #配置仓库在本地文件系统中的缓存目录
           basedir: /Users/chenchaolei/vcs-local-repo/git/gitlab-docker-repo/chenchaoleicn/spring-cloud-config-reps-cache
+    rabbitmq:
+      host: rabbitmq.thunder
+      port: 80
+      username: springcloud
+      password: 123456
