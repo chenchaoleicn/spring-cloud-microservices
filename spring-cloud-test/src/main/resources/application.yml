@@ -1,0 +1,15 @@
+server:
+  port: 1111
+spring:
+  application:
+    name: spring-cloud-test
+
+#注册中心配置
+eureka:
+  client:
+    #将eureka客户端的健康检测交给spring-boot-actuator模块的health端点, 以实现更加全面的健康状态维护
+    #eureka.client.healthcheck.enabled=true should only be set in application.yml.
+    #Setting the value in bootstrap.yml causes undesirable side effects,
+    #such as registering in Eureka with an UNKNOWN status.
+    healthcheck:
+      enabled: true

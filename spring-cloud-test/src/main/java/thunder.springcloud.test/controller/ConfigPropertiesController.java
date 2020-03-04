@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RefreshScope
 @RestController
-@RequestMapping("/springcloudtest")
+@RequestMapping("/spring-cloud-test")
 public class ConfigPropertiesController {
 
     private static final Logger logger = LoggerFactory.getLogger(ConfigPropertiesController.class);
