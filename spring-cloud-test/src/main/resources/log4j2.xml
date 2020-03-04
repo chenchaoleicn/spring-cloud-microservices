@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="OFF">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--控制台只输出level及以上级别的信息(onMatch), 其他的直接拒绝(onMismatch)-->
+            <ThresholdFilter level="debug" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%thread] %-5level %class{36} - %msg%n"/>
+        </Console>
+
+        <!--这个会打印出所有的信息, 每次大小超过size, 则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩, 作为存档-->
+        <RollingFile name="RollingInfoFile" fileName="/Users/Shared/logs/spring-cloud-microservices/test/test.log"
+                     filePattern="/Users/Shared/logs/spring-cloud-microservices/test/$${date:yyyy-MM}/test-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%thread] %-5level %class{36} - %msg%n"/>
+            <SizeBasedTriggeringPolicy size="512MB"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="RollingInfoFile"/>
+        </Root>
+        <Logger name="thunder.springcloud" level="DEBUG" />
+        <Logger name="org.springframework" level="INFO" />
+    </Loggers>
+</Configuration>

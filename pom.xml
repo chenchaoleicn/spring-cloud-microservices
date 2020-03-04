@@ -18,6 +18,7 @@
     <modules>
         <module>spring-cloud-eureka</module>
         <module>spring-cloud-config</module>
+        <module>spring-cloud-test</module>
     </modules>
 
     <properties>

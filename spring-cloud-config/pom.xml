@@ -20,13 +20,7 @@
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 
-		<!-- 配置中心的版本控制系统支持svn(默认支持的是git) -->
-<!--		<dependency>-->
-<!--			<groupId>org.tmatesoft.svnkit</groupId>-->
-<!--			<artifactId>svnkit</artifactId>-->
-<!--		</dependency>-->
-
-		<!-- eureka客户端 -->
+		<!-- 注册中心客户端 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>

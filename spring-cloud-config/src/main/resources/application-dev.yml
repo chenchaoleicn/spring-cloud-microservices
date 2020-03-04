@@ -4,13 +4,39 @@ spring:
       server:
         git:
           uri: https://github.com/chenchaoleicn/spring-cloud-config-reps.git
-#          username: chenchaoleicn@gmail.com
-#          password: <password>
+          #username: chenchaoleicn@gmail.com
+          #password: <password>
           search-paths: '{application}'
           #配置仓库在本地文件系统中的缓存目录
           basedir: /Users/chenchaolei/vcs-local-repo/git/gitlab-docker-repo/chenchaoleicn/spring-cloud-config-reps-cache
-    rabbitmq:
-      host: rabbitmq.thunder
-      port: 80
-      username: springcloud
-      password: 123456
+    bus:
+      #开启消息跟踪
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: springcloud
+    password: 123456
+
+eureka:
+  client:
+    service-url:
+      #http://eureka-peer1:8761/eureka/,http://eureka-peer2:8762/eureka/,http://eureka-peer3:8763/eureka/
+      defaultZone: http://eureka-single:8761/eureka/
+
+management:
+  #加载所有的端点(默认只加载了info、health)
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    info:
+      show-details: always
+    health:
+      show-details: always
+    refresh:
+      show-details: always
+    bus-refresh:
+      show-details: always

@@ -1,0 +1,27 @@
+server:
+  port: 1111
+spring:
+  application:
+    name: spring-clound-test
+  cloud:
+    config:
+      name: spring-cloud-test
+      profile: dev
+#      label: master
+      #配置高可用配置中心
+      discovery:
+        enabled: true
+        #config服务的spring.application.name
+        serviceId: spring-cloud-config
+      #启动时失败快速响应与重试
+      failFast: true
+
+#注册中心配置
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://eureka-peer1:8761/eureka/,http://eureka-peer2:8762/eureka/,http://eureka-peer3:8763/eureka/
+      defaultZone: http://eureka-single:8761/eureka/
+    #将eureka客户端的健康检测交给spring-boot-actuator模块的health端点, 以实现更加全面的健康状态维护
+    healthcheck:
+      enabled: true
