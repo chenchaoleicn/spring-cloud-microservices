@@ -9,6 +9,7 @@
         <version>2.2.2.RELEASE</version>
         <relativePath/>
     </parent>
+
     <groupId>thunder.springcloud</groupId>
     <artifactId>spring-cloud-microservices</artifactId>
     <packaging>pom</packaging>
@@ -19,6 +20,7 @@
         <module>spring-cloud-eureka</module>
         <module>spring-cloud-config</module>
         <module>spring-cloud-test</module>
+        <module>spring-cloud-zuul</module>
     </modules>
 
     <properties>
